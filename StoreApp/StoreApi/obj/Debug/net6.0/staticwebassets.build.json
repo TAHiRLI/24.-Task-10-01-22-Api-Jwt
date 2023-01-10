@@ -1,11 +1,54 @@
 {
   "Version": 1,
-  "Hash": "vxc/I2j0I6jp+6tSSI2dpefdZwDrxqNuCsNhOKvXzm0=",
+  "Hash": "hnI3EP3rwkQ+/Aukr91SKtEUXhbMp/LoA588/T/qOSc=",
   "Source": "StoreApi",
   "BasePath": "_content/StoreApi",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "StoreApi\\wwwroot",
+      "Source": "StoreApi",
+      "ContentRoot": "C:\\Users\\Hp\\Desktop\\CodeAcadem\\BackEnd\\Tasks\\25. Task 10-01-22 Api Jwt\\StoreApp1\\StoreApp\\StoreApi\\wwwroot\\",
+      "BasePath": "_content/StoreApi",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\Hp\\Desktop\\CodeAcadem\\BackEnd\\Tasks\\25. Task 10-01-22 Api Jwt\\StoreApp1\\StoreApp\\StoreApi\\wwwroot\\Uploads\\Products\\7a126972-6d7d-4ef9-a6fa-f197fb0eae63h6-img-8.jpg",
+      "SourceId": "StoreApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Hp\\Desktop\\CodeAcadem\\BackEnd\\Tasks\\25. Task 10-01-22 Api Jwt\\StoreApp1\\StoreApp\\StoreApi\\wwwroot\\",
+      "BasePath": "_content/StoreApi",
+      "RelativePath": "Uploads/Products/7a126972-6d7d-4ef9-a6fa-f197fb0eae63h6-img-8.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\Products\\7a126972-6d7d-4ef9-a6fa-f197fb0eae63h6-img-8.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Hp\\Desktop\\CodeAcadem\\BackEnd\\Tasks\\25. Task 10-01-22 Api Jwt\\StoreApp1\\StoreApp\\StoreApi\\wwwroot\\Uploads\\Products\\f8ee636f-123f-451e-8116-7c15c5960b93h3-team-img-1 - Copy.png",
+      "SourceId": "StoreApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Hp\\Desktop\\CodeAcadem\\BackEnd\\Tasks\\25. Task 10-01-22 Api Jwt\\StoreApp1\\StoreApp\\StoreApi\\wwwroot\\",
+      "BasePath": "_content/StoreApi",
+      "RelativePath": "Uploads/Products/f8ee636f-123f-451e-8116-7c15c5960b93h3-team-img-1 - Copy.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\Products\\f8ee636f-123f-451e-8116-7c15c5960b93h3-team-img-1 - Copy.png"
+    }
+  ]
 }

@@ -1,3 +1,4 @@
+using AutoMapper;
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -61,10 +62,19 @@ builder.Services.AddDbContext<StoreDbContext>(opt =>
 {
     opt.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
 });
-builder.Services.AddAutoMapper(opt =>
-{
-    opt.AddProfile(new AdminMapper());
-});
+//builder.Services.AddAutoMapper(opt =>
+//{
+//    opt.AddProfile(new AdminMapper());
+//});
+builder.Services.AddHttpContextAccessor();
+
+builder.Services.AddSingleton(provider => new MapperConfiguration(cfg =>
+  {
+      cfg.AddProfile(new AdminMapper(provider.GetService<IHttpContextAccessor>()));
+  }).CreateMapper());
+
+
+
 
 builder.Services.AddIdentity<AppUser, IdentityRole>(opt =>
 {

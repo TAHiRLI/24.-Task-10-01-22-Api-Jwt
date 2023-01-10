@@ -147,3 +147,4 @@ C:\Users\Hp\Desktop\CodeAcadem\BackEnd\Tasks\25. Task 10-01-22 Api Jwt\StoreApp1
 C:\Users\Hp\Desktop\CodeAcadem\BackEnd\Tasks\25. Task 10-01-22 Api Jwt\StoreApp1\StoreApp\StoreApi\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\Hp\Desktop\CodeAcadem\BackEnd\Tasks\25. Task 10-01-22 Api Jwt\StoreApp1\StoreApp\StoreApi\bin\Debug\net6.0\MicroElements.Swashbuckle.FluentValidation.dll
 C:\Users\Hp\Desktop\CodeAcadem\BackEnd\Tasks\25. Task 10-01-22 Api Jwt\StoreApp1\StoreApp\StoreApi\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\Hp\Desktop\CodeAcadem\BackEnd\Tasks\25. Task 10-01-22 Api Jwt\StoreApp1\StoreApp\StoreApi\bin\Debug\net6.0\StoreApi.staticwebassets.runtime.json

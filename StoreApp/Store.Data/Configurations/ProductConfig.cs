@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Store.Core.Entities;
 using System;
@@ -21,6 +22,7 @@ namespace Store.Data.Configurations
             builder.Property(x => x.SalePrice).HasColumnType("decimal(18,2)");
             builder.Property(x => x.DiscountPercent).HasColumnType("decimal(18,2)");
             builder.Property(x => x.StockStatus);
+            builder.Property(x => x.ImgUrl).IsRequired(true).HasMaxLength(100);
             builder.HasOne(x => x.Category).WithMany(x => x.Products).OnDelete(DeleteBehavior.NoAction);
 
         }

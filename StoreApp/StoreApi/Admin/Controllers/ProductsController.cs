@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Store.Core.Entities;
 using Store.Data.DAL;
 using StoreApi.Admin.Dtos.ProductDtos;
+using StoreApi.Helpers;
 using System.Data;
 
 namespace StoreApi.Admin.Controllers
@@ -19,11 +20,15 @@ namespace StoreApi.Admin.Controllers
     {
         private readonly StoreDbContext _context;
         private readonly IMapper _mapper;
+        private readonly IWebHostEnvironment _env;
+        private readonly IHttpContextAccessor _httpAccessor;
 
-        public ProductsController(StoreDbContext context, IMapper mapper)
+        public ProductsController(StoreDbContext context, IMapper mapper, IWebHostEnvironment env, IHttpContextAccessor httpAccessor)
         {
             this._context = context;
             this._mapper = mapper;
+            this._env = env;
+            this._httpAccessor = httpAccessor;
         }
         [HttpGet]
         public IActionResult GetAll()
@@ -44,11 +49,14 @@ namespace StoreApi.Admin.Controllers
             }
 
             var dto = _mapper.Map<ProductGetDto>(product);
+            //string baseUrl = $"{Request.Scheme}://{Request.Host}{Request.PathBase}/uploads/products/";
+            //dto.ImgUrl = baseUrl + product.ImgUrl;
+
             return Ok(dto);
         }
 
         [HttpPost]
-        public IActionResult Create(ProductPostDto dto)
+        public IActionResult Create([FromForm] ProductPostDto dto)
         {
             if (!_context.Categories.Any(x => x.Id == dto.CategoryId))
             {
@@ -56,6 +64,7 @@ namespace StoreApi.Admin.Controllers
             }
 
             Product product = _mapper.Map<Product>(dto);
+            product.ImgUrl = FileManager.Save(dto.ImageFile, _env.WebRootPath, "Uploads/Products");
             _context.Products.Add(product);
             _context.SaveChanges();
 
@@ -63,7 +72,7 @@ namespace StoreApi.Admin.Controllers
             return NoContent();
         }
         [HttpPut("{id}")]
-        public IActionResult Edit(int id, ProductPostDto dto)
+        public IActionResult Edit( int id,[FromForm] ProductPutDto dto)
         {
             var product = _context.Products.FirstOrDefault(x => x.Id == id);
             if (product == null)
@@ -77,6 +86,12 @@ namespace StoreApi.Admin.Controllers
             product.DiscountPercent = dto.DiscountPercent;  
             product.StockStatus = dto.StockStatus;  
             product.CategoryId = dto.CategoryId;
+
+            if(dto.ImageFile != null)
+            {
+                FileManager.Delete(_env.WebRootPath, "Uploads/Product", product.ImgUrl);
+                product.ImgUrl = FileManager.Save(dto.ImageFile, _env.WebRootPath, "Uploads/Products");
+            }
 
             _context.SaveChanges();
             return NoContent();
